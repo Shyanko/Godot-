@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cjmd5p8y455xc"]
+
+[ext_resource type="Script" path="res://characters/warrior/cards/warrior_trickster.gd" id="3_1idfq"]
+
+[resource]
+script = ExtResource("3_1idfq")

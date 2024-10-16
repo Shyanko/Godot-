@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://d4c8yfl4f4sat"]
+
+[ext_resource type="Script" path="res://characters/warrior/cards/warrior_block.gd" id="2_avork"]
+
+[resource]
+script = ExtResource("2_avork")

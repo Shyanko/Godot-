@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c8g8a5tx1sr2p"]
+
+[ext_resource type="Script" path="res://characters/warrior/cards/warrior_true_strength.gd" id="2_pdjl6"]
+
+[resource]
+script = ExtResource("2_pdjl6")

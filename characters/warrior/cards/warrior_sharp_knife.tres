@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cedsow628sq3y"]
+
+[ext_resource type="Script" path="res://characters/warrior/cards/warrior_sharp_knife.gd" id="2_rjcfh"]
+
+[resource]
+script = ExtResource("2_rjcfh")

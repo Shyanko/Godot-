@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://d20gx8xpmgpdi"]
+
+[ext_resource type="Script" path="res://characters/warrior/cards/warrior_big_slam.gd" id="2_hh2ps"]
+
+[resource]
+script = ExtResource("2_hh2ps")

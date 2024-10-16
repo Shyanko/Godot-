@@ -1,0 +1,178 @@
+[gd_scene load_steps=11 format=3 uid="uid://po5dm0h5gkkg"]
+
+[ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://art/pixel_rpg.ttf" id="1_3qsk2"]
+[ext_resource type="Texture2D" uid="uid://cpydvk8mq66o5" path="res://art/tile_0087.png" id="2_q4213"]
+[ext_resource type="Texture2D" uid="uid://cqcal03735mv8" path="res://art/tile_0118.png" id="3_rtheh"]
+[ext_resource type="Texture2D" uid="uid://bwmn3s4107u2g" path="res://material_library/中科大校徽1.png" id="4_jvglm"]
+
+[sub_resource type="GDScript" id="GDScript_o1tqi"]
+script/source = "extends Control
+
+@onready var continue_button: Button=%Continue
+
+func _ready() -> void:
+	get_tree().paused=false
+
+func _on_continue_pressed() -> void:
+	print(\"continue run\")
+
+
+func _on_new_game_pressed() -> void:
+	print(\"new run\")
+
+
+func _on_exit_pressed() -> void:
+	get_tree().quit()
+"
+
+[sub_resource type="Gradient" id="Gradient_dol7w"]
+colors = PackedColorArray(0.054902, 0.282353, 0.6, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kkrqs"]
+gradient = SubResource("Gradient_dol7w")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ftrvd"]
+font = ExtResource("1_3qsk2")
+font_size = 13
+font_color = Color(1, 1, 0.254902, 1)
+shadow_size = 3
+shadow_color = Color(0.760784, 0.760784, 0.717647, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5yc5d"]
+font = ExtResource("1_3qsk2")
+font_size = 13
+font_color = Color(1, 1, 0.254902, 1)
+shadow_size = 3
+shadow_color = Color(0.760784, 0.760784, 0.717647, 1)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_x8whh"]
+
+[node name="Character_Selector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_o1tqi")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_kkrqs")
+
+[node name="Characters" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -26.0
+offset_top = 12.0
+offset_right = 26.0
+offset_bottom = 52.0
+grow_horizontal = 2
+
+[node name="Conan" type="Label" parent="Characters"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "柯南"
+label_settings = SubResource("LabelSettings_ftrvd")
+horizontal_alignment = 1
+
+[node name="Conan2" type="Label" parent="Characters"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "铁甲战士"
+label_settings = SubResource("LabelSettings_5yc5d")
+horizontal_alignment = 1
+
+[node name="CharacterPotrait" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = -59.0
+offset_right = 61.0
+offset_bottom = -19.0
+grow_vertical = 0
+texture = ExtResource("2_q4213")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 102.0
+offset_right = 228.0
+offset_bottom = 124.0
+theme_override_font_sizes/font_size = 10
+text = "Start"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -4.0
+offset_right = 38.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="WarriorButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_x8whh")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/WarriorButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_rtheh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="WarriorButton2" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_x8whh")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/WarriorButton2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_jvglm")
+expand_mode = 1
+stretch_mode = 5
